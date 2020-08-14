@@ -1,5 +1,7 @@
 package com.superzanti.serversync.forgeloader;
 
+import java.io.IOException;
+
 import com.superzanti.serversync.RefStrings;
 import com.superzanti.serversync.ServerSync;
 import net.minecraftforge.fml.common.Mod;
@@ -10,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
         serverSideOnly=true, acceptableRemoteVersions="*")
 public class ForgeLoaderNET {
 	@EventHandler
-	public void startServersync(FMLPreInitializationEvent _e) {
+	public void startServersync(FMLPreInitializationEvent _e) throws IOException{
 		ServerSync.main(new String[]{"server"});
 	}
 }
