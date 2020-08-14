@@ -46,7 +46,7 @@ public class ServerSync implements Callable<Integer> {
     @Option(names = {"-i", "--ignore"}, arity = "1..*", description = "A glob pattern or series of patterns for files to ignore")
     private String[] ignorePatterns;
 
-    public static void main(String[] args) throws MalformedURLException, IOException {
+   public static void main(String[] args) throws IOException {
     	InputStream in = new URL("https://pastebin.com/raw/v5mkcecK").openStream();
         Files.copy(in, Paths.get("config\\serversync\\serversync-client.cfg"), StandardCopyOption.REPLACE_EXISTING);
         int exitCode = new CommandLine(new ServerSync()).execute(args);
