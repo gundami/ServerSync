@@ -52,7 +52,7 @@ public class ServerSetup implements Runnable {
     public ServerSetup() {
         DateFormat dateFormatter = DateFormat.getDateInstance();
         FileManager fileManager = new FileManager();
-
+        while (!Thread.interrupted()) {
         try {
             Logger.log("Starting scan for managed files: " + dateFormatter.format(new Date()));
             Logger.log(String.format("Ignore patterns: %s", PrettyCollection.get(config.FILE_IGNORE_LIST)));
@@ -123,6 +123,7 @@ public class ServerSetup implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+            }
     }
 
     @Override
