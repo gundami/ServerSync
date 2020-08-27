@@ -47,8 +47,8 @@ public class ServerSync implements Callable<Integer> {
     private String[] ignorePatterns;
 
    public static void main(String[] args) throws IOException {
-    	InputStream in = new URL("https://pastebin.com/raw/v5mkcecK").openStream();
-        Files.copy(in, Paths.get("config\\serversync\\serversync-client.cfg"), StandardCopyOption.REPLACE_EXISTING);
+    	//InputStream in = new URL("https://pastebin.com/raw/v5mkcecK").openStream();
+        //Files.copy(in, Paths.get("config\\serversync\\serversync-client.cfg"), StandardCopyOption.REPLACE_EXISTING);
         int exitCode = new CommandLine(new ServerSync()).execute(args);
         if (exitCode != 0) {
             System.exit(exitCode);
