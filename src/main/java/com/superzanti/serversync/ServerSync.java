@@ -21,7 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-@Command(name = "自动更新器【请勿关闭】", mixinStandardHelpOptions = true, version = "3.6.1", description = "A utility for synchronizing a server<->client style game.")
+@Command(name = "ServerSync", mixinStandardHelpOptions = true, version = "3.6.1", description = "A utility for synchronizing a server<->client style game.")
 public class ServerSync implements Callable<Integer> {
 
     /* AWT EVENT DISPATCHER THREAD */
