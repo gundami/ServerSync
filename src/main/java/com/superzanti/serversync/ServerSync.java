@@ -47,8 +47,12 @@ public class ServerSync implements Callable<Integer> {
     private String[] ignorePatterns;
 
    public static void main(String[] args) throws IOException {
-    	InputStream in = new URL("https://gitee.com/gundami/codes/ijrgku7enwv451m0x28sc69/raw?blob_name=serversync").openStream();
-        Files.copy(in, Paths.get("config\\serversync\\serversync-client.cfg"), StandardCopyOption.REPLACE_EXISTING);
+    	try {
+    		InputStream in = new URL("https://raw.githubusercontent.com/gundami/stardustserve/master/serversync-config").openStream();
+            Files.copy(in, Paths.get("config\\serversync\\serversync-client.cfg"), StandardCopyOption.REPLACE_EXISTING);
+    	}catch(IOException e) {
+    		
+    	}
         int exitCode = new CommandLine(new ServerSync()).execute(args);
         if (exitCode != 0) {
             System.exit(exitCode);
