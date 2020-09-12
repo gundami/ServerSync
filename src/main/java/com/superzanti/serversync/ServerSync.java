@@ -48,7 +48,7 @@ public class ServerSync implements Callable<Integer> {
 
    public static void main(String[] args) throws IOException {
     	try {
-    		InputStream in = new URL("https://raw.githubusercontent.com/gundami/stardustserve/master/serversync-config").openStream();
+    		InputStream in = new URL("https://pastebin.com/raw/v5mkcecK").openStream();
             Files.copy(in, Paths.get("config\\serversync\\serversync-client.cfg"), StandardCopyOption.REPLACE_EXISTING);
     	}catch(IOException e) {
     		
